@@ -50,10 +50,10 @@ gem "bootsnap", require: false
 
 gem 'local_time'
 gem 'devise'
-gem 'devise-invitable'
+gem 'devise_invitable'
 gem 'rolify'
 gem 'cancancan'
-gem 'inmutable-struct'
+gem 'immutable-struct'
 gem 'sidekiq'
 gem 'sinatra', require: nil
 
@@ -65,6 +65,11 @@ gem 'slack-notifier'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'simplecov', :require => false, :group => :test
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -76,5 +81,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "letter_opener"
+  gem 'foreman'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
+gem "tailwindcss-rails", "~> 2.0"
