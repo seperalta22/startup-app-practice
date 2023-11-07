@@ -8,9 +8,10 @@ class CreateAccounts < ActiveRecord::Migration[7.0]
       t.string :state
       t.string :zip
       t.string :country
-      t.jsonb :settings
+      t.jsonb :settings, null: false, default: {}
 
       t.timestamps
     end
+    add_index :accounts, :settings, using: :gin # Add GIN index for jsonb column
   end
 end
