@@ -6,21 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
     <%= render partial: 'layouts/components/header' %>
     <div class="flex flex-col md:flex-row">
-    <%= render partial: 'layouts/components/sidebar' %>
-    <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
-      <div class="flex flex-wrap p-3">
-        <%= yield %>
-      </div>
-      <%= render partial: 'layouts/components/footer' %>
-      
+      <%= render partial: 'layouts/components/sidebar' %>
+      <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+        <div class="flex items-center justify-center">
+          <%= flash_messages %>
+        </div>
+        <div class="flex flex-wrap p-3">
+          <%= yield %>
+        </div>
+        <%= render partial: 'layouts/components/footer' %>
       </div>
     </div>
   </body>
